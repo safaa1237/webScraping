@@ -87,7 +87,15 @@ async function getTitle(asin) {
 
 async function scheduled(asin, crontab) {
   const page = await getPage(asin)
-  let job = new CronJob(crontab, function () {
-    getTitle()
-  })
+  let job = new CronJob(
+    crontab,
+    function () {
+      getTitle()
+    },
+    null,
+    null,
+    null,
+    null
+  )
+  job.start()
 }
