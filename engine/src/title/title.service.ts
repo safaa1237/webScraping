@@ -1,12 +1,12 @@
 import { Injectable } from "@nestjs/common";
-import {snedIsonToQueue , recieveTitle} from '../../queue/titleQueue'
+import {sendAsinToQueue , recieveTitle} from '../../queue/titleQueue'
 
 
 @Injectable()
 export class TitleService {
 
     getTitleFromQueue(ison){
-        snedIsonToQueue(ison);
+        sendAsinToQueue(ison);
         let title = recieveTitle();
         return title;
     }

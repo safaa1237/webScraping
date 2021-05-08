@@ -1,6 +1,6 @@
 const amqp = require('amqplib/callback_api');
 
-function snedIsonToQueue(asin) {
+function sendAsinToQueue(asin) {
   amqp.connect(
     'amqps://qsshxlae:2qF4etyjQ6IYFWWLQ5QoRH_TISf2Wji8@sparrow.rmq.cloudamqp.com/qsshxlae',
     (err, conn) => {
@@ -42,3 +42,4 @@ function recieveTitle() {
 }
 
 module.exports = recieveTitle();
+module.exports = sendAsinToQueue();

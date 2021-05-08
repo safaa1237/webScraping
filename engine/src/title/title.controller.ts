@@ -7,6 +7,7 @@ export class TitleController {
 
     @Get('/:asin')
     gettitle(@Param('asin') asin):any {
+        
         return this.titleService.getTitleFromQueue(asin);
     };
     
